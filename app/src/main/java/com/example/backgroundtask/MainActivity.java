@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnGet;
     private TextView tvHasil;
     boolean play = false;
-    int x, y, z;
+    int a, b, c;
     ArrayList<String> arrayUrl = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,15 +66,15 @@ public class MainActivity extends AppCompatActivity {
                                         e.printStackTrace();
                                     }
                                     while(play){
-                                        x = random.nextInt(3);
-                                        y = random.nextInt(3);
-                                        z = random.nextInt(3);
+                                        a = random.nextInt(3);
+                                        b = random.nextInt(3);
+                                        c = random.nextInt(3);
                                         handler.post(new Runnable() {
                                             @Override
                                             public void run() {
-                                                Glide.with(MainActivity.this).load(arrayUrl.get(x)).into(imgSlot1);
-                                                Glide.with(MainActivity.this).load(arrayUrl.get(y)).into(imgSlot2);
-                                                Glide.with(MainActivity.this).load(arrayUrl.get(z)).into(imgSlot3);
+                                                Glide.with(MainActivity.this).load(arrayUrl.get(a)).into(imgSlot1);
+                                                Glide.with(MainActivity.this).load(arrayUrl.get(b)).into(imgSlot2);
+                                                Glide.with(MainActivity.this).load(arrayUrl.get(c)).into(imgSlot3);
                                                 tvHasil.setText(txt);
                                             }
                                         });
@@ -93,10 +93,10 @@ public class MainActivity extends AppCompatActivity {
 
                     }else{
                         play=!play;
-                        if((x == y) && (x == z)){
-                            Toast.makeText(MainActivity.this, "MATCH", Toast.LENGTH_SHORT).show();
+                        if((a == b) && (a == c)){
+                            Toast.makeText(MainActivity.this, "Cocok", Toast.LENGTH_SHORT).show();
                         }else{
-                            Toast.makeText(MainActivity.this, "NOT MATCH", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, "Tidak Cocok", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }
