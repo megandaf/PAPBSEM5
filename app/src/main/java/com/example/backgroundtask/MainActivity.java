@@ -94,9 +94,9 @@ public class MainActivity extends AppCompatActivity {
                     }else{
                         play=!play;
                         if((x == y) && (x == z)){
-                            Toast.makeText(MainActivity.this, "Cocok", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, "MATCH", Toast.LENGTH_SHORT).show();
                         }else{
-                            Toast.makeText(MainActivity.this, "Tidak Cocok", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, "NOT MATCH", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }
